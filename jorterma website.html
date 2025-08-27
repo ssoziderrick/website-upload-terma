@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joterma Learning Center - Quality Education in Liberia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-yellow: #facc15;
+            --light-yellow: #fef9c3;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        .hero-heading {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+        
+        .section-heading {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-yellow);
+            border-radius: 2px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: var(--text-dark);
+            box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(250, 204, 21, 0.4);
+            background-color: #eab308;
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .logo-text {
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .logo-text span {
+            color: var(--accent-yellow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('school-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .stats {
+            background-color: var(--light-yellow);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .programs {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+        
+        .programs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .program-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .program-card-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .program-card-body {
+            padding: 1.5rem;
+        }
+        
+        .program-card-body ul {
+            padding-left: 1.5rem;
+        }
+        
+        .program-card-body li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 2rem;
+            background-color: var(--light-yellow);
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1/1;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 58, 138, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 2rem;
+            padding: 1rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .testimonial-card {
+            min-width: 300px;
+            scroll-snap-align: start;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Donate Section */
+        .donate {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--light-bg);
+        }
+        
+        .donate-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .donate-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .donate-option {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .donate-option i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .donate-option h4 {
+            margin: 0 0 0.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .donate-option p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background-color: var(--light-yellow);
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-detail i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .footer-links h3,
+        .footer-contact h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-links h3:after,
+        .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-yellow);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .footer-contact i {
+            margin-right: 1rem;
+            color: var(--accent-yellow);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent-yellow);
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero-heading {
+                font-size: 2rem;
+            }
+            
+            .section-heading {
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo terma.png" alt="Joterma Learning Center Logo">
+                <div class="logo-text">JOTERMA <span>LEARNING CENTER</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#donate" class="btn btn-primary">Give a Way</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1 class="hero-heading">Empowering Liberia's Future Through Quality Education</h1>
+        <p>Providing transformative learning experiences for children in Margibi County and beyond since 2016</p>
+        <div>
+            <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+            <a href="#donate" class="btn btn-secondary">Support Our Mission</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Students Enrolled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Qualified Teachers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Educational Programs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Community Focused</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-heading">Our Story</h2>
+                <p>Founded in the aftermath of Liberia's devastating Ebola crisis, Joterma Learning Center emerged as a beacon of hope for the children of Margibi County. Our name symbolizes "unity, healing, and progress," reflecting our commitment to rebuilding communities through education.</p>
+                <p>What began as a grassroots initiative by local educators, concerned parents, and returning diaspora members has grown into a thriving educational institution serving hundreds of students each year.</p>
+                <p>We specialize in creating nurturing environments where children can recover from educational disruptions while developing the skills and confidence needed for lifelong success.</p>
+                <a href="#programs" class="btn btn-primary">Explore Our Programs</a>
+            </div>
+            <div class="about-image">
+                <img src="about-image.jpg" alt="Joterma Learning Center Students">
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="programs-container">
+            <h2 class="section-heading">Our Educational Programs</h2>
+            <p>We offer comprehensive educational solutions designed to meet the diverse needs of Liberian children at every stage of development.</p>
+            
+            <div class="program-cards">
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>Early Childhood Education</h3>
+                    </div>
+                    <div class="program-card-body">
+                        <ul>
+                            <li>Play-based learning for ages 2-5</li>
+                            <li>Social-emotional development</li>
+                            <li>Early literacy and numeracy</li>
+                            <li>Safe and nurturing environment</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>Elementary School</h3>
+                    </div>
+                    <div class="program-card-body">
+                        <ul>
+                            <li>Grades 1-6 curriculum</li>
+                            <li>Core subjects with Liberian context</li>
+                            <li>Creative arts integration</li>
+                            <li>Character development</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>Junior High</h3>
+                    </div>
+                    <div class="program-card-body">
+                        <ul>
+                            <li>Grades 7-9 comprehensive program</li>
+                            <li>College preparatory courses</li>
+                            <li>Leadership development</li>
+                            <li>Career exploration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>Enrichment Programs</h3>
+                    </div>
+                    <div class="program-card-body">
+                        <ul>
+                            <li>After-school tutoring</li>
+                            <li>Weekend workshops</li>
+                            <li>Computer literacy training</li>
+                            <li>Sports and arts programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-container">
+            <h2 class="section-heading">Life at Joterma</h2>
+            <p>Explore moments from our vibrant learning community through these images of daily activities, special events, and student achievements.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="students learning.jpg" alt="Classroom Learning">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="cultural-event.jpg" alt="Cultural Festival">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="sports-day.jpg" alt="Sports Competition">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="teachers-meeting.jpg" alt="Teacher Collaboration">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="computer-class.jpg" alt="Technology Education">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="graduation.jpg" alt="Graduation Ceremony">
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-heading" style="color: white;">What Our Community Says</h2>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Joterma gave my children hope after we lost so much during the Ebola crisis. The teachers treat every child like family and the education is excellent."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="parent-1.jpg" alt="Parent">
+                        <div class="author-info">
+                            <h4>Mary Johnson</h4>
+                            <p>Parent of two students</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As an education officer, I've been impressed by Joterma's innovative approach to addressing post-crisis learning gaps. Their model should be replicated across Liberia."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="education-officer.jpg" alt="Education Officer">
+                        <div class="author-info">
+                            <h4>Samuel T. Roberts</h4>
+                            <p>Margibi County Education Officer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The computer training I received at Joterma helped me get my first job. I'm now working at a tech startup in Monrovia thanks to the skills I learned here."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="alumni-1.jpg" alt="Alumni">
+                        <div class="author-info">
+                            <h4>James Kollie</h4>
+                            <p>Joterma Alumni, Class of 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="donate" id="donate">
+        <div class="donate-container">
+            <h2 class="section-heading">Give the Gift of Education</h2>
+            <p>Your support helps us provide scholarships, improve facilities, and expand programs for children in Margibi County. Every contribution makes a difference.</p>
+            
+            <div class="donate-options">
+                <div class="donate-option">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Sponsor a Child</h4>
+                    <p>Cover tuition for one student for a full year</p>
+                </div>
+                
+                <div class="donate-option">
+                    <i class="fas fa-laptop"></i>
+                    <h4>Technology Fund</h4>
+                    <p>Help us expand our computer lab and digital resources</p>
+                </div>
+                
+                <div class="donate-option">
+                    <i class="fas fa-book"></i>
+                    <h4>Library Fund</h4>
+                    <p>Contribute to our growing collection of books and materials</p>
+                </div>
+                
+                <div class="donate-option">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Lunch Program</h4>
+                    <p>Support our daily meal program for students</p>
+                </div>
+            </div>
+            
+            <button id="donateNowBtn" class="btn btn-primary">Donate Now</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Duazon, Margibi County, Liberia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+231-886-403-271</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>jotermalearningcenter@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com/joterma" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/joterma" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/joterma" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/joterma" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="logo terma.png" alt="Joterma Learning Center Logo">
+                </div>
+                <p>Joterma Learning Center is a registered educational institution in Margibi County, Liberia, dedicated to providing quality education to children from all backgrounds since 2016.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/joterma" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/joterma" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/joterma" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/joterma" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Programs</h3>
+                <ul>
+                    <li><a href="#programs">Early Childhood</a></li>
+                    <li><a href="#programs">Elementary School</a></li>
+                    <li><a href="#programs">Junior High</a></li>
+                    <li><a href="#programs">After-School Tutoring</a></li>
+                    <li><a href="#programs">Computer Training</a></li>
+                    <li><a href="#programs">Daycare Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Duazon, Margibi County, Liberia</p>
+                <p><i class="fas fa-phone-alt"></i> +231-886-403-271</p>
+                <p><i class="fas fa-envelope"></i> jotermalearningcenter@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 7:30AM - 4:30PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Joterma Learning Center. All Rights Reserved. | Designed with ❤️ for Liberia's Future</p>
+        </div>
+    </footer>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Student Enrollment Form</h2>
+            <form id="enrollmentForm">
+                <div class="form-group">
+                    <label for="studentName">Student's Full Name</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="parentName">Parent/Guardian Name</label>
+                    <input type="text" id="parentName" name="parentName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="parentPhone">Parent/Guardian Phone</label>
+                    <input type="tel" id="parentPhone" name="parentPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="parentEmail">Parent/Guardian Email</label>
+                    <input type="email" id="parentEmail" name="parentEmail">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Home Address</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="program">Program Interested In</label>
+                    <select id="program" name="program" required>
+                        <option value="">Select Program</option>
+                        <option value="early-childhood">Early Childhood</option>
+                        <option value="elementary">Elementary</option>
+                        <option value="junior-high">Junior High</option>
+                        <option value="after-school">After-School Tutoring</option>
+                        <option value="weekend">Weekend Enrichment</option>
+                        <option value="computer">Computer Literacy</option>
+                        <option value="daycare">Daycare</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Make a Donation</h2>
+            <form id="donationForm">
+                <div class="form-group">
+                    <label for="donorName">Your Name</label>
+                    <input type="text" id="donorName" name="donorName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="donorEmail">Email Address</label>
+                    <input type="email" id="donorEmail" name="donorEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="donationAmount">Donation Amount (USD)</label>
+                    <input type="number" id="donationAmount" name="donationAmount" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="donationType">Donation Type</label>
+                    <select id="donationType" name="donationType">
+                        <option value="general">General Support</option>
+                        <option value="scholarship">Scholarship Fund</option>
+                        <option value="facilities">Facilities Improvement</option>
+                        <option value="technology">Technology Fund</option>
+                        <option value="lunch">Lunch Program</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="mobile-money">Mobile Money</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                        <option value="credit-card">Credit Card</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="donationMessage">Message (Optional)</label>
+                    <textarea id="donationMessage" name="donationMessage"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Complete Donation</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        }
+        
+        // Modal Handling
+        const enrollmentModal = document.getElementById('enrollmentModal');
+        const donationModal = document.getElementById('donationModal');
+        const enrollBtns = document.querySelectorAll('[href="#enroll"], #enrollNowBtn');
+        const donateBtns = document.querySelectorAll('[href="#donate"], #donateNowBtn');
+        const closeBtns = document.querySelectorAll('.close-btn');
+        
+        // Show enrollment modal
+        enrollBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                enrollmentModal.style.display = 'block';
+            });
+        });
+        
+        // Show donation modal
+        donateBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                donationModal.style.display = 'block';
+            });
+        });
+        
+        // Close modals
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                enrollmentModal.style.display = 'none';
+                donationModal.style.display = 'none';
+            });
+        });
+        
+        // Close when clicking outside modal
+        window.addEventListener('click', (e) => {
+            if (e.target === enrollmentModal) {
+                enrollmentModal.style.display = 'none';
+            }
+            if (e.target === donationModal) {
+                donationModal.style.display = 'none';
+            }
+        });
+        
+        // Form Submissions
+        document.getElementById('enrollmentForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your application! We will contact you shortly with next steps.');
+            enrollmentModal.style.display = 'none';
+            e.target.reset();
+        });
+        
+        document.getElementById('donationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your generous donation! Your support makes quality education possible for Liberian children.');
+            donationModal.style.display = 'none';
+            e.target.reset();
+        });
+        
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will respond to your inquiry soon.');
+            e.target.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#enroll' || 
+                    this.getAttribute('href') === '#donate') {
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
